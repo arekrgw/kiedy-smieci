@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
+import { GarbageCity } from './garbage-city.schema';
 
 @Schema()
 export class GarbageRegion extends Document {
@@ -7,10 +8,10 @@ export class GarbageRegion extends Document {
   regionName: string;
   @Prop()
   postalCode: string;
-  @Prop()
+  @Prop({ ref: GarbageCity.name })
   city: Types.ObjectId;
   @Prop()
-  lastUsed: string;
+  lastUsed: Date;
 }
 
 export const GarbageRegionSchema = SchemaFactory.createForClass(GarbageRegion);

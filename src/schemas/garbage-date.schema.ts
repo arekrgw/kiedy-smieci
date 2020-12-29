@@ -12,9 +12,9 @@ export class GarbageDate extends Document {
   garbageRegion: Types.ObjectId;
 
   @Prop()
-  date: string;
+  date: Date;
 
-  @Prop({ unique: true })
+  @Prop({ unique: true, index: true })
   dateObjectHash: string;
 }
 
