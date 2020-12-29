@@ -13,14 +13,16 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
     }),
     MongooseModule.forRoot(process.env.DATABASE),
     CacheModule.register({
-      ttl: 60 * 10,
-      max: 20,
+      ttl: parseInt(process.env.CACHE_TTL) || 60 * 10,
+      max: parseInt(process.env.CACHE_MAX) || 20,
     }),
   ],
   controllers: [],
-  providers: [{
-    provide: APP_INTERCEPTOR,
-    useClass: CacheInterceptor
-  }],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: CacheInterceptor,
+    },
+  ],
 })
 export class AppModule {}

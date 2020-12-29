@@ -4,9 +4,7 @@ import { GarbageService } from './garbage.service';
 import { GarbageDatabaseModule } from './database.module';
 
 @Module({
-  imports: [
-    GarbageDatabaseModule,
-  ],
+  imports: [GarbageDatabaseModule],
   controllers: [GarbageController],
   providers: [GarbageService],
 })

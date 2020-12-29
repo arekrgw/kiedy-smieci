@@ -26,6 +26,7 @@
     "@nestjs/core": "^7.0.0",
     "@nestjs/mongoose": "^7.0.2",
     "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/swagger": "^4.7.9",
     "cache-manager": "^3.4.0",
     "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2",
@@ -36,7 +37,8 @@
     "object-hash": "^2.0.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.5.4"
+    "rxjs": "^6.5.4",
+    "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.0.0",
