@@ -10,12 +10,12 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { GarbageService } from './garbage.service';
-import { GarbageDate } from '../schemas/garbage-date.schema';
-import { DatesUpload } from '../dto/dates-upload.dto';
-import { GarbageRegion } from '../schemas/garbage-region.schema';
-import { MongoIdDto } from '../dto/mongo-id.dto';
-import { GarbageType } from '../schemas/garbage-type.schema';
-import { GarbageCity } from '../schemas/garbage-city.schema';
+import { GarbageDate } from './database/schemas/garbageDate.schema';
+import { DatesUploadObject } from './dto/datesUpload.dto';
+import { GarbageRegion } from './database/schemas/garbageRegion.schema';
+import { MongoIdDto } from '../globalDto/mongoId.dto';
+import { GarbageType } from './database/schemas/garbageType.schema';
+import { GarbageCity } from './database/schemas/garbageCity.schema';
 
 @Controller('')
 export class GarbageController {
@@ -75,7 +75,7 @@ export class GarbageController {
 
   @Post('upload')
   @UsePipes(new ValidationPipe())
-  async uploadDates(@Body() uploadData: DatesUpload): Promise<{message: string}>{
+  async uploadDates(@Body() uploadData: DatesUploadObject): Promise<{message: string}>{
     const response = await this.garbageService.uploadNewRegionWithDates(uploadData);
     return response;
   }

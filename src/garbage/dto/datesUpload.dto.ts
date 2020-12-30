@@ -17,7 +17,7 @@ export class DateObject {
   type: string;
 }
 
-export class GarbageRegionDto {
+export class RegionObject {
   @ApiProperty({
     description: 'Region Name',
   })
@@ -31,7 +31,7 @@ export class GarbageRegionDto {
   postalCode: string;
 }
 
-export class GarbageCityDto {
+export class CityObject {
   @ApiProperty({
     description: 'City Name',
   })
@@ -45,20 +45,20 @@ export class GarbageCityDto {
   province: string;
 }
 
-export class DatesUpload {
+export class DatesUploadObject {
   @ApiProperty({
     description: 'City object',
   })
   @ValidateNested({ each: true })
-  @Type(() => GarbageCityDto)
-  city: GarbageCityDto;
+  @Type(() => CityObject)
+  city: CityObject;
 
   @ApiProperty({
     description: 'Region object',
   })
   @ValidateNested({ each: true })
-  @Type(() => GarbageRegionDto)
-  region: GarbageRegionDto;
+  @Type(() => RegionObject)
+  region: RegionObject;
 
   @ApiProperty({
     description: 'Dates array',

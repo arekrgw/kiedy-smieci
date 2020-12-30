@@ -1,9 +1,11 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
-import { GarbageType } from './garbage-type.schema';
-import { GarbageRegion } from './garbage-region.schema';
+import { GarbageType } from './garbageType.schema';
+import { GarbageRegion } from './garbageRegion.schema';
 
-@Schema()
+@Schema({
+  timestamps: true,
+})
 export class GarbageDate extends Document {
   @Prop({ ref: GarbageType.name })
   garbageType: Types.ObjectId;

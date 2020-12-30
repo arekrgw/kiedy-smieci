@@ -3,19 +3,19 @@ import { Module } from '@nestjs/common';
 import {
   GarbageCity,
   GarbageCitySchema,
-} from 'src/schemas/garbage-city.schema';
+} from 'src/garbage/database/schemas/garbageCity.schema';
 import {
   GarbageDate,
   GarbageDateSchema,
-} from 'src/schemas/garbage-date.schema';
+} from 'src/garbage/database/schemas/garbageDate.schema';
 import {
   GarbageRegion,
   GarbageRegionSchema,
-} from 'src/schemas/garbage-region.schema';
+} from 'src/garbage/database/schemas/garbageRegion.schema';
 import {
   GarbageType,
   GarbageTypeSchema,
-} from 'src/schemas/garbage-type.schema';
+} from 'src/garbage/database/schemas/garbageType.schema';
 
 @Module({
   imports: [
